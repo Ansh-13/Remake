@@ -20,12 +20,10 @@ export async function POST(request: NextRequest) {
         { status: 400 }
       );
     }
-
     await User.create({
       email,
       password,
     });
-
     return NextResponse.json({ message: "Email regsiter" }, { status: 201 });
   } catch (error) {
     return NextResponse.json(
